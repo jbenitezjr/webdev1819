@@ -1,0 +1,50 @@
+body {
+    background: #d3d3d3;
+}
+table {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 5px;
+}
+tr td {
+    margin: 10px;
+    padding: 5px;
+}
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+.list {
+    background: #ffffff;
+    margin: 10px;
+    padding: 5px;
+    float: left;
+}
+.font1{
+    font-family: Arial;
+    color: red;
+}
+.font2{
+    font-family: Monospace;
+    color: red;
+}
+.font3{
+    font-family: Serif;
+    color: blue;
+}
