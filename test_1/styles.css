@@ -16,6 +16,9 @@ section {
 a:link {
     text-decoration: none;
 }
+a:visited {
+    color: blue;
+}
 em {
     background-color: yellow;
 }
