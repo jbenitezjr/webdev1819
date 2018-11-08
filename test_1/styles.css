@@ -1,0 +1,58 @@
+* {
+    font-family: helvetica;
+}
+h1 {
+    color: orange;
+}
+.norm {
+    font-weight: normal;
+    font-size: 50%;
+}
+section {
+    border: 3px dotted green;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+a:link {
+    text-decoration: none;
+}
+em {
+    background-color: yellow;
+}
+ol {
+    list-style-type: lower-alpha;
+}
+.feature {
+    color: red;
+}
+.main {
+    background-color: lightblue;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px 10px rgb(0,0,0)
+}
+.secondary {
+background-color: transparent;
+}
+.noindent {
+    margin-left: inherit;
+}
+.pink {
+   background-color: pink; 
+}
+.aqua {
+    background-color: aquamarine;
+}
+.lemon {
+    background-color: #fff44f;
+}
+.grape {
+    background-color: #6f2da8;
+}
+.penguin {
+    background-image: url(images/penguin.jpg);
+    background-repeat: no-repeat;
+    height: 196px;
+}
+.inline {
+    display: inline-block;
+}

@@ -76,3 +76,6 @@ button:hover {
     padding: 5px;
     background-color: hsl(0, 5%, 70%);
 }
+#pic2 {
+    height: 222px;
+}
