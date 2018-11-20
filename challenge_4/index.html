@@ -7,14 +7,40 @@
         <meta charset=utf-8 />
     </head>
     <body>
-        <div class="jumbotron jumbotron-fluid" style="background-color: #4717f6">
+        <div class="jumbotron jumbotron-fluid" id="#home" style="background-color: #4717f6">
           <div class="container">
             <h1 class="display-4">Lane Tech FRC</h1>
             <p class="lead">FRC is the FIRST Robotics Competition. Where a specific goal is given, and the team
             has to built a robot to fulfill it.</p>
           </div>
         </div>
-        <h3>Coaches:</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">FRC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#coaches">Coaches</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#forms">Forms</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <h3 id="#coaches">Coaches:</h3>
         <div class="row">
         <div class="c2 col-lg-2">
             <img class="card-img-top" src="images/mrdurham.jpg" alt="Mr. Durham">
@@ -35,5 +61,20 @@
             </div>
         </div>
         </div>
+        <form id="forms">
+            <div class="form-group">
+                <label for="name" style="color: white;">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="namePlace" placeholder="Enter name" style="width: 700px;">
+            </div>
+            <div class="form-group">
+                <label for="emailPlace" style="color: white;">Email address</label>
+                <input type="email" class="form-control" id="emailPlace" aria-describedby="emailHelp" placeholder="Enter email" style="width: 700px;">
+            </div>
+            <div class="form-group">
+                <label for="message" style="color: white;">Message</label>
+                <input type="text" class="form-control" id="message" placeholder="Message" style="width: 700px;">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </body>
 </html>
