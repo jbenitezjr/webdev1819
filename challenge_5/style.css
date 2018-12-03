@@ -1,0 +1,13 @@
+.bord {
+    border: 3px black solid;
+}
+.top {
+    border-top: 3px black solid;
+    border-left: 3px black solid;
+    border-right: 3px black solid;
+}
+.bot {
+    border-bottom: 3px black solid;
+    border-left: 3px black solid;
+    border-right: 3px black solid;
+}
