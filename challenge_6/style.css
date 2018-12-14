@@ -1,0 +1,25 @@
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+body{
+    background-color: black;
+}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("images/bananas.jpg");
+    min-height: 50%;
+    min-width: 50%;
+}
+.carousel-inner img {
+    height: 80vh;
+    width: 50vw;
+}
+.caro {
+    display: inline-block;
+    height: 80vh;
+    width: 50vw;
+    left: 25vw;
+    top: 10vh;
+    bottom: 10vh;
+}
