@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas</title>
+        <meta charset=utf-8 />
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <canvas id="drawing">
+            
+        </canvas>
+        <script>
+        var canvasElement = document.querySelector("#drawing");
+        var context = canvasElement.getContext("2d");
+        // Rectangle 1J
+        context.beginPath();
+        context.rect(30, 20, 100, 10);
+        context.closePath();
+ 
+        // the outline-1J
+        context.lineWidth = 10;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+ 
+        // the fill color-1J
+        context.fillStyle = "#51DCFF";
+        context.fill();
+        
+        // Rectangle 2J
+        context.beginPath();
+        context.rect(70, 20, 20, 70);
+        context.closePath();
+ 
+        // the outline-2J
+        context.lineWidth = 10;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+ 
+        // the fill color-2J
+        context.fillStyle = "#51DCFF";
+        context.fill();
+        
+        function drawJ() {
+        // Circle 1J
+        context.beginPath();
+        context.arc(55, 90, 40, 0, 2*Math.PI, true);
+        context.fillStyle = '#51DCFF';
+        context.fill();
+     
+        // draw the stroke 1J
+        context.lineWidth = 5;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+        }
+        //Circle 1J
+        drawJ();
+        
+        function draw2J() {
+        // Circle 2J
+        context.beginPath();
+        context.arc(55, 90, 10, 0, 2*Math.PI, true);
+        context.fillStyle = 'yellow';
+        context.fill();
+     
+        // draw the stroke 2J
+        context.lineWidth = 5;
+        context.strokeStyle = 'yellow';
+        context.stroke();
+        }
+        //Circle 2J
+        draw2J();
+        
+        // Rectangle 3J
+        context.beginPath();
+        context.rect(15, 50, 45, 40);
+        context.closePath();
+ 
+        // the outline-3J
+        context.lineWidth = 10;
+        context.strokeStyle = 'yellow';
+        context.stroke();
+ 
+        // the fill color-3J
+        context.fillStyle = "yellow";
+        context.fill();
+        
+        // Rectangle 1B
+        context.beginPath();
+        context.rect(160, 20, 40, 110);
+        context.closePath();
+ 
+        // the outline-1B
+        context.lineWidth = 10;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+ 
+        // the fill color-1B
+        context.fillStyle = "#51DCFF";
+        context.fill();
+        
+        function drawB() {
+        // Circle 1B
+        context.beginPath();
+        context.arc(200, 50, 33, Math.PI/2, 3*Math.PI/2, true);
+        context.fillStyle = '#51DCFF';
+        context.fill();
+     
+        // draw the stroke 1B
+        context.lineWidth = 5;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+        }
+        //Circle 1B
+        drawB();
+        
+        function draw2B() {
+        // Circle 2B
+        context.beginPath();
+        context.arc(200, 100, 33, Math.PI/2, 3*Math.PI/2, true);
+        context.fillStyle = '#51DCFF';
+        context.fill();
+     
+        // draw the stroke 2B
+        context.lineWidth = 5;
+        context.strokeStyle = '#51DCFF';
+        context.stroke();
+        }
+        //Circle 2B
+        draw2B();
+        
+        function draw3B() {
+        // Circle 3B
+        context.beginPath();
+        context.arc(200, 50, 10, Math.PI/2, 3*Math.PI/2, true);
+        context.fillStyle = 'yellow';
+        context.fill();
+     
+        // draw the stroke 3B
+        context.lineWidth = 5;
+        context.strokeStyle = 'yellow';
+        context.stroke();
+        }
+        //Circle 3B
+        draw3B();
+        
+        function draw4B() {
+        // Circle 4B
+        context.beginPath();
+        context.arc(200, 100, 10, Math.PI/2, 3*Math.PI/2, true);
+        context.fillStyle = 'yellow';
+        context.fill();
+     
+        // draw the stroke 4B
+        context.lineWidth = 5;
+        context.strokeStyle = 'yellow';
+        context.stroke();
+        }
+        //Circle 4B
+        draw4B();
+        </script>
+    </body>
+</html>
