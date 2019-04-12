@@ -6,12 +6,17 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <canvas id="drawing">
+        <canvas id="drawing" width="400" height="400" style="background-color:yellow";>
             
         </canvas>
         <script>
         var canvasElement = document.querySelector("#drawing");
         var context = canvasElement.getContext("2d");
+        context.translate(200,150);
+        context.rotate(60*Math.PI/180);
+        context.scale(0.25,1.5);
+        
+            
         // Rectangle 1J
         context.beginPath();
         context.rect(30, 20, 100, 10);
