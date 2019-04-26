@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>Canvas</title>
-        <meta charset=utf-8 />
+        <meta charset=utf-8 />0000
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <canvas id="clockSpace" width="800" height="800" style="background-color:red">
+        <canvas id="clockSpace" width="800" height="800" style="background-color:purple">
             
         </canvas>
         <script>
@@ -27,11 +27,11 @@ function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = 'black';
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, 'purple');
-  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(0.5, 'black');
   grad.addColorStop(1, 'purple');
   ctx.strokeStyle = grad;
   ctx.lineWidth = radius*0.1;
