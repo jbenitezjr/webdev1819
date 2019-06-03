@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emergency Services App</title>
+        <meta charset=utf-8 />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <style>
+      body{
+        background-color: blue;
+        color:  white;
+      }
+      p{
+        margin: 10px;
+      }
+      .jumbotron{
+        background-color: black;
+        color: white;
+        position: relative;
+        
+      }
+      button{
+        background-color: red;
+        color:white;
+        margin: 10px;
+      }
+      iframe{
+        position: relative;
+        left: 19vw;
+        width: 800px;
+        height: 400px;
+        top: 3vh;
+        min-height: 50%;
+        min-width: 50%;
+      }
+      .class{
+        position: relative;
+        left: 39.5vw;
+        top: 3vh;
+      }
+      h1{
+        position: relative;
+        left: 36vw;
+      }
+      .info{
+        margin: 10px;
+        border: solid white 5px;
+        border-radius: 5px;
+        width: 33vw;
+        height: 27vh;
+      }
+    </style>
+    
+    
+    </head>
+        
+        
+    <body>
+      
+        <div class="jumbotron jumbotron-fluid">
+          <h1>Instant Police</h1>
+          <div>
+            <p class="class" style="margin-bottom:3px">
+              <a href="https://data.cityofchicago.org/Public-Safety/Police-Stations-Map/gkur-vufi" target="_blank" style="font-size:12px;font-weight:bold;text-decoration:none;color: white;font-family:arial;">Police Stations - Map</a>
+            </p>
+              <iframe width="500px" title="Police Stations - Map" height="425px" src="https://data.cityofchicago.org/w/gkur-vufi/3q3f-6823?cur=g2zdjDXWOOD&from=root" frameborder="0"scrolling="no">
+                <a href="https://data.cityofchicago.org/Public-Safety/Police-Stations-Map/gkur-vufi" title="Police Stations - Map" target="_blank">Police Stations - Map</a>
+              </iframe>
+          </div>
+        </div>
+
+<div class="position">
+<p>Get Your Nearest District Police Station</p>
+<button onclick="getLocation()">Press First</button>
+<button onclick="getShortest()">Press Second</button>
+<button onclick="insertDistance()">Press Third</button>
+<div class="info">
+<p id="demo"></p>
+<p id="ex"></p>
+<p id="final"></p>
+</div>
+</div>
+
+<script>
+          var min=0;
+          var stations=[];
+          var district=0;
+          var tempLat=0;
+          var tempLong=0;
+          var distances=[];
+          var x = document.getElementById("demo");
+          var z = document.getElementById("ex");
+          function all(){
+            getLocation();
+            getShortest();
+            insertDistance();
+            
+          }
+          function check(){
+            for(var a=0; a<13; a++){
+              //alert(distances[a]);
+            }
+          }
+          function check2(){
+            for(var c=0; c<13; c++){
+              //alert(stations[c].stationDistance);
+            }
+          }
+          var y = document.getElementById("final");
+          var w = document.getElementById("dist");
+          function getShortest(){
+            min = Math.min.apply(Math, distances);
+            //alert(min);
+            z.innerHTML= "Distance from nearest district police station: "+min+" miles away.";
+          }
+          function Station(distance, address){
+            this.stationDistance=distance;
+            this.stationAddress=address;
+          }
+          function measureDistances(x, y, a, b){
+            var dist=Math.sqrt(Math.pow(60*(x-a), 2)+Math.pow(69*(y-b), 2));
+            distances.push(dist);
+          }
+          function insertDistance(){
+            for(var b=0; b<24; b++){
+              stations[b].stationDistance=distances[b];
+            }
+            for(var d=0; d<25; d++){
+              if(stations[d].stationDistance==min){
+                y.innerHTML="Station address is: "+stations[d].stationAddress;
+              }
+            }
+          }
+          function getInfo(){
+          for(var i=1; i<26; i++){
+          if(i!=13&&i!=21){
+          $.ajax({
+            url: "https://data.cityofchicago.org/resource/9rg7-mz9y.json?district="+i,
+            type: "GET",
+            data: {
+             "$limit" : 5000,
+           }
+          }).done(function(data) {
+            //alert("Latitude: " + data[0].latitude+" Longitude: "+data[0].longitude);
+           
+           getLocation2();
+           //alert("tempLat "+tempLat);
+           measureDistances(tempLong, tempLat, data[0].longitude, data[0].latitude);
+           //alert(distances[0]);
+           //alert(i);
+           //alert(data[0].address);
+           stations.push(new Station(0, data[0].address));
+          });
+          }
+          else{
+            distances.push(100);
+            stations.push(new Station(0, "Does not exist."));
+          }
+          }
+          }
+
+
+function getLocation2() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition2);
+  } else { 
+    z.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition2(position) {
+  tempLat=position.coords.latitude;
+  tempLong=position.coords.longitude;
+}
+
+
+  
+var navigator = 0;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Your position is:"+
+  "<br>Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  tempLat=position.coords.latitude;
+  tempLong=position.coords.longitude;
+  getInfo();
+}
+        </script>
+
+</html>
